@@ -2,7 +2,7 @@ import React from "react";
 
 
 const restaurant_data = {
-    imageSrc: "https://content.codecademy.com/courses/React/react_photo-goose.jpg",
+    imageSrc: "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
     name: "Goose",
     address: "1234 Goose Ave",
     city: "New York",

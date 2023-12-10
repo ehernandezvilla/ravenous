@@ -1,0 +1,51 @@
+
+.searchTitle {
+    background-color: teal;
+    color: white;
+    width: 1280px;
+    height: 60px;
+}
+
+.searchBar {
+    background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('../assets/background.jpg');
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.inputBar {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+input {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+button {
+    width: 10%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background-color: coral;
+    color: white;
+}
+
+button:hover {
+    background-color: white;
+    color: coral;
+    cursor: pointer;
+}
