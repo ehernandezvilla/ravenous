@@ -29,15 +29,12 @@ function SearchBar() {
     switch (name) {
       case "sortBy":
         setSortBy(value);
-        console.log(value);
         break;
       case "term":
         setTerm(value);
-        console.log(value);
         break;
       case "location":
         setLocation(value);
-        console.log(value);
         break;
       default:
         break;
@@ -46,7 +43,11 @@ function SearchBar() {
 
   const handleSortByChange = (sortChoiceName) => {
     setSortBy(sortChoiceName);
-    console.log(sortChoiceName)
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`You are searching for ${term} in ${location} sorted by ${sortBy}`);
   };
 
 
@@ -72,7 +73,7 @@ function SearchBar() {
         <input placeholder="Search Businesses" name="term" value={term} onChange={handleChange}/>
         <input placeholder="Where?" name="location" value={location} onChange={handleChange}/>
         </div>
-        <button>Lets Go</button>
+        <button onClick={handleSubmit}>Lets Go</button>
       </div>
     </div>
   );
