@@ -1,4 +1,4 @@
-import BusinessList from "./BusinessList";
+import { useState } from "react";
 import styles from "../assets/SearchBar.module.css";
 
 
@@ -18,6 +18,38 @@ const sortChoises = [
 ];
 
 function SearchBar() {
+  const [sortBy, setSortBy] = useState("Best Match");
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    
+    switch (name) {
+      case "sortBy":
+        setSortBy(value);
+        console.log(value);
+        break;
+      case "term":
+        setTerm(value);
+        console.log(value);
+        break;
+      case "location":
+        setLocation(value);
+        console.log(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleSortByChange = (sortChoiceName) => {
+    setSortBy(sortChoiceName);
+    console.log(sortChoiceName)
+  };
+
+
   return (
     <div>
       <div className={styles.searchBar}>
@@ -25,15 +57,20 @@ function SearchBar() {
         <div className={styles.sortBy}>
           <div className={styles.sortByOptions}>
           <ul>
-            {sortChoises.map((item) => (
-              <li key={item.id}>{item.name}</li>
+            {sortChoises.map((choice) => (
+              <li key={choice.id} 
+              className={sortBy === choice.name ? styles.sortByActive : ''}
+              onClick={() => handleSortByChange(choice.name)}>
+                {choice.name}
+              </li>
             ))}
+            <hr></hr>
           </ul>
           </div>
-          </div>
+        </div>
         <div className={styles.inputBar}>
-        <input placeholder="Search Businesses" />
-        <input placeholder="Where?" />
+        <input placeholder="Search Businesses" name="term" value={term} onChange={handleChange}/>
+        <input placeholder="Where?" name="location" value={location} onChange={handleChange}/>
         </div>
         <button>Lets Go</button>
       </div>
