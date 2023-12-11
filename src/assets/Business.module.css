@@ -1,0 +1,36 @@
+
+h1, h2, h3 {
+    color: black;
+}
+
+p {
+    color: black;
+    line-height: 150%;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.BusinessContainer {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    overflow: hidden;
+    border: 1px red solid;
+}
+
+.BusinessCard {
+    text-align: left;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    margin: 10px;
+    border: 2px grey solid;
+}
+
+.BusinessInfo {
+    padding: 10px;
+}

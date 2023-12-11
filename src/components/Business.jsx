@@ -1,45 +1,47 @@
-import React from "react";
+import PropTypes from 'prop-types';
+import style from "../assets/Business.module.css";
+import "../assets/Business.module.css";
 
+function Business(props) {
+  const { data } = props;
 
-const restaurant_data = {
-    imageSrc: "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
-    name: "Goose",
-    address: "1234 Goose Ave",
-    city: "New York",
-    state: "NY",
-    zipCode: "10001",
-    category: "American",
-    rating: 4.5,
-    reviewCount: 90
-}
-
-
-function Business() {
   return (
     <div>
-      <h1>Business</h1>
-      <img
-        src={restaurant_data.imageSrc}
-        alt="goose"
-      />
-      <h3>Name</h3>
-      <p>{restaurant_data.name}</p>
-      <h3>Address</h3>
-      <p>{restaurant_data.address}</p>
-      <h3>City</h3>
-      <p>{restaurant_data.city}</p>
-      <h3>State</h3>
-      <p>{restaurant_data.state}</p>
-      <h3>Zip Code</h3>
-      <p>{restaurant_data.zipCode}</p>
-      <h3>Category</h3>
-      <p>{restaurant_data.category}</p>
-      <h3>Rating</h3>
-      <p>{restaurant_data.rating}</p>
-      <h3>Review count</h3>
-      <p>{restaurant_data.reviewCount}</p>
+      <div className={style.BusinessContainer}>
+        <div className={style.BusinessCard}>
+          <img src={data.imageSrc} alt={data.name} />
+          <div className={style.BusinessInfo}>
+            <p>Name: {data.name}</p>
+            <p>Address: {data.address}</p>
+            <p>City: {data.city}</p>
+            <p>State: {data.state}</p>
+            <p>Zip code: {data.zipCode}</p>
+            <p>Category: {data.category}</p>
+            <p>Rating: {data.rating}</p>
+            <p>Review count: {data.reviewCount}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
+
+// Define prop types
+
+Business.propTypes = {
+  data: PropTypes.shape({
+    imageSrc: PropTypes.string,
+    name: PropTypes.string,
+    address: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
+    zipCode: PropTypes.string,
+    category: PropTypes.string,
+    rating: PropTypes.number,
+    reviewCount: PropTypes.number
+  }).isRequired
+};
+
+
 
 export default Business;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BusinessList from "./BusinessList";
 import styles from "../assets/SearchBar.module.css";
 
 function SearchBar() {
@@ -12,6 +13,7 @@ function SearchBar() {
         </div>
         <button>Lets Go</button>
       </div>
+      <BusinessList/>
     </div>
   );
 }

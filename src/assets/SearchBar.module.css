@@ -2,7 +2,7 @@
 .searchTitle {
     background-color: teal;
     color: white;
-    width: 1280px;
+    width: auto;
     height: 60px;
 }
 
@@ -33,7 +33,7 @@ input {
 }
 
 button {
-    width: 10%;
+    width: 20%;
     height: 40px;
     border-radius: 5px;
     border: 1px solid gray;
