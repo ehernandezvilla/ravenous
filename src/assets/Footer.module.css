@@ -1,0 +1,12 @@
+
+footer {
+    background-color: black;
+    height: 100px;
+}
+
+
+footer p {
+    color: white;
+    display: inline-block;
+    padding: 20px;
+}

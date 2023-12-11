@@ -11,7 +11,7 @@ function Business(props) {
         <div className={style.BusinessCard}>
           <img src={data.imageSrc} alt={data.name} />
           <div className={style.BusinessInfo}>
-            <p>Name: {data.name}</p>
+            <h2>{data.name}</h2>
             <p>Address: {data.address}</p>
             <p>City: {data.city}</p>
             <p>State: {data.state}</p>
