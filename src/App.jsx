@@ -2,6 +2,7 @@ import './App.css'
 import SearchBar from './components/SearchBar';
 import BusinessList from './components/BusinessList';
 import Footer from './components/Footer';
+import YelpDebug from './components/YelpDebug';
 
 const restaurant_data = {
   imageSrc: "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
@@ -20,6 +21,7 @@ function App() {
     <>
       <SearchBar />
       <BusinessList data={restaurant_data} />
+      <YelpDebug />
       <Footer />
     </>
   );
