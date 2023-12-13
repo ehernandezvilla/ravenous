@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 /src/components/yelpDebbug.jsx
+/src/utils/yelp.js
