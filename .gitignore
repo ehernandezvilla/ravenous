@@ -25,3 +25,4 @@ dist-ssr
 
 /src/components/YelpDebug.jsx
 /src/utils/yelp.js
+/src/utils/utils.js

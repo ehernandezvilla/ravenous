@@ -1,47 +1,36 @@
 import PropTypes from 'prop-types';
 import style from "../assets/Business.module.css";
-import "../assets/Business.module.css";
 
-function Business(props) {
-  const { data } = props;
-
+function Business({ data }) {
   return (
-    <div>
-      <div className={style.BusinessContainer}>
-        <div className={style.BusinessCard}>
-          <img src={data.imageSrc} alt={data.name} />
-          <div className={style.BusinessInfo}>
-            <h2>{data.name}</h2>
-            <p>Address: {data.address}</p>
-            <p>City: {data.city}</p>
-            <p>State: {data.state}</p>
-            <p>Zip code: {data.zipCode}</p>
-            <p>Category: {data.category}</p>
-            <p>Rating: {data.rating}</p>
-            <p>Review count: {data.reviewCount}</p>
-          </div>
+    <div className={style.BusinessContainer}>
+      <div className={style.BusinessCard}>
+        <img src={data.image_url} alt={data.name} />
+        <div className={style.BusinessInfo}>
+          <a href={data.url}><h2>{data.name}</h2></a>
+          <p>Address: {data.location.address1}</p>
+          <p>City: {data.location.city}</p>
+          <p>State: {data.location.state}</p>
+          <p>Zip code: {data.location.zip_code}</p>
+          <p>Category: {data.categories[0].title}</p>
+          <p>Rating: {data.rating}</p>
+          <p>Review count: {data.review_count}</p>
         </div>
       </div>
     </div>
   );
 }
 
-// Define prop types
-
 Business.propTypes = {
   data: PropTypes.shape({
-    imageSrc: PropTypes.string,
+    image_url: PropTypes.string,
     name: PropTypes.string,
-    address: PropTypes.string,
-    city: PropTypes.string,
-    state: PropTypes.string,
-    zipCode: PropTypes.string,
-    category: PropTypes.string,
+    location: PropTypes.object,
+    categories: PropTypes.array,
     rating: PropTypes.number,
-    reviewCount: PropTypes.number
+    review_count: PropTypes.number,
+    url: PropTypes.string
   }).isRequired
 };
-
-
 
 export default Business;
